@@ -1,0 +1,8 @@
+build/
+out/
+.vscode/
+.metals/
+.bloop/
+.Xil/
+
+*.vcd
