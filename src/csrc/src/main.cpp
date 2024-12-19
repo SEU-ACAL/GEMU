@@ -47,17 +47,7 @@ void sim_exit() {
     printf("The wave data has been saved to the dump.vcd\n");
 }
 
-// void init_tet() {
-//     while (cpu_npc.pc != MEM_BASE) { 
-//         // printf("%ld\n", cpu_npc.pc); 
-//         npc_exec_once(); 
-//         // npc_step--;
-//     } // pc先走拍到第一条指令执行结束
-// }
 
-
-extern float softmax_input_float[datain_lines][datain_bandwidth];
-extern fp16_t softmax_input_fp16[datain_lines][datain_bandwidth];
 
 //================ main =====================//
 int main(int argc, char *argv[]) {
@@ -65,29 +55,8 @@ int main(int argc, char *argv[]) {
 
     init_monitor(argc, argv);
 
-    // display_float_matrix(softmax_input_float, datain_lines, datain_bandwidth);
-
-    // for (int j = 0; j < datain_lines; j++) {
-    //     for (int k = 0; k < datain_bandwidth; k++) {
-    //         softmax_input_fp16[j][k] = float_to_fp16(softmax_input_float[j][k]);
-    //     }
-    // }
-    
-    // display_fp16_matrix(softmax_input_fp16, datain_lines, datain_bandwidth);
-
-
-
-    // read_fp16_array("src/main/scala/Softmax/test_data/input_1024x1024.hex", softmax_input_fp16);
-
-
-
     sdb_mainloop();
 
     sim_exit();
-
-    // share_exp(softmax_input_fp16, softmax_input_fp16);
-
-    // display_fp16_matrix(softmax_input_fp16, datain_lines, datain_bandwidth);
-
 
 } 
